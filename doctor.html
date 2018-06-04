@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<title>doctor</title>
+	<script type="text/javascript" src="./js/jquery-3.2.0.min.js"></script>
+	<style type="text/css">
+		html,body {
+            font-size: 62.5%;
+        }
+		html,body,p {
+            margin: 0;
+            padding: 0;
+        }
+        li{
+        	list-style: none;
+        }
+        html{
+        	overflow-x:hidden;
+        }
+        /*ul li {
+            padding: 2rem;
+        }*/
+		.top{
+			width:100%;
+			height:4.2rem;
+			background-color:#e1e8ef;
+		}
+		.top-left, .top-right{
+			padding:0 1.6rem 0 1.6rem;
+		}
+		.top-left p{
+			font-family:PingFangSC-Regular;
+			font-size:1.4rem;
+			color:#666666;
+			letter-spacing:0.072rem;
+			height:4.2rem;	
+			line-height: 4.2rem;
+		}
+		.top-left span{
+			color:blue;
+		}
+		.top-right span{
+			font-family:PingFangSC-Regular;
+			font-size:1.4rem;
+			color:#666666;
+			letter-spacing:0.072rem;
+			float:right;
+			height:4.2rem;	
+			line-height: 4.2rem;
+		}
+		.middle{
+			width:100%;
+			height:10.3rem;
+		}
+		.middle img{
+			height:4.0rem;
+			width:4.0rem;
+			padding:1rem 0 0 1rem;
+		}
+		.tip{
+			position: relative;
+			top:-4.0rem;
+			left:5rem;
+		}
+		.tip span{
+			font-family:PingFangSC-Regular;
+			font-size:1.6rem;
+			letter-spacing:-0.04rem;
+			line-height:1.6rem;
+			padding:0 0.5rem;
+		}
+		.tip span{
+			color:#323232;
+		}
+		.tip span.gan{
+			color:#666666;
+		}
+		.tip p{
+			font-family:PingFangSC-Regular;
+			font-size:1.3rem;
+			color:#666666;
+			margin: 0.2rem 0 0 0.5rem;
+		}
+		.tip .content{
+			padding:2rem 0 0 0rem;
+		}
+		.tip .content a{
+			background:#f9f9f9;
+			border-radius:2px;
+			width:51px;
+			height:20px;
+			padding:0 1rem;
+			color:#bcbcbc;
+			font-size: 1.3rem;
+		}
+		.line{
+			border-bottom: 1px solid #e1e8ef;
+			margin:0 0 0 5rem;
+			position: relative;
+			top:-2rem;
+			left:0;
+		}
+		.bottom {
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+            font-size: 0;
+        }
+        .next-btn {
+            width: 70%;
+            display: inline-block;
+            background:#1c91e0;
+            height: 4rem;
+            line-height: 4rem;
+            text-align: center;
+            color: #fff;
+            font-size: 1.5rem;
+        }
+        .select-all {
+            font-size: 1.5rem;
+            display: inline-block;
+            width: 30%;
+            height: 4rem;
+            line-height: 4rem;
+            text-align: center;
+            color: #000;
+        }
+        .all-btn {
+            width: 1.6rem;
+            height: 1.6rem;
+            display: inline-block;
+            vertical-align: -0.4rem;
+        }
+        .all-noselected {
+            background-image: url("./image/no-selected.png");
+            background-size: 100% 100%;
+        }
+        .all-selected {
+            background-image: url("./image/selected.png");
+            background-size: 100% 100%;
+        }
+        .no-selected{
+        	background-image: url("./image/no-selected.png");
+            background-size: 100% 100%;
+        }
+        .selected{
+        	background-image: url("./image/selected.png");
+            background-size: 100% 100%;
+        }
+        .clearfix::after {
+            content: "";
+            clear: both;
+            display: block;
+            height: 0;
+        }
+        .middle .button{
+        	float:right;
+        	z-index: 9999;
+        }
+        .button span{
+        	width:2rem;
+        	height:2rem;
+        	display:block;
+        }
+	</style>
+</head>
+<body>
+	<div class="top">
+		<div class="top-right">
+			<span>关闭管理</span>
+		</div>
+		<div class="top-left">
+			<p>已选<span class="change">2</span>人</p>
+		</div>	
+	</div>
+	<div class="middle">
+		<div class="button">
+		 	<span class="select-btn no-selected"></span>
+		</div>
+		<img src="./image/tx.png">
+		<div class="tip">
+			<span>天小时</span>
+			<span class="gan">感冒</span>
+			<p>男 27岁</p>
+			<div class="content">
+				<a>已支付</a>
+				<a>黑龙江/哈尔滨</a>
+			</div>
+		</div>
+		<div class="line"></div>
+	</div>
+	<div class="middle">
+		<div class="button">
+			<span class="select-btn no-selected"></span>
+		</div>
+		<img src="./image/tx.png">
+		<div class="tip">
+			<span>天小时</span>
+			<span class="gan">感冒</span>
+			<p>男 27岁</p>
+			<div class="content">
+				<a>已支付</a>
+				<a>黑龙江/哈尔滨</a>
+			</div>
+		</div>
+		<div class="line"></div>
+	</div>
+	<div class="middle">
+		<div class="button">
+			<span class="select-btn no-selected"></span>
+		</div>
+		<img src="./image/tx.png">
+		<div class="tip">
+			<span>天小时</span>
+			<span class="gan">感冒</span>
+			<p>男 27岁</p>
+			<div class="content">
+				<a>已支付</a>
+				<a>黑龙江/哈尔滨</a>
+			</div>
+		</div>
+		<div class="line"></div>	
+	</div>
+
+	<div class="bottom clearfix">
+        <div class="next-btn">下一步</div>
+        <div class="select-all">全选 <span class="all-btn all-noselected"></span></div>
+    </div>
+
+	<script type="text/javascript">
+		$(function(){
+            //选中全部
+            $(".select-all").click(function(){
+                if($(".all-btn").hasClass("all-noselected")){
+                    $(".all-btn").addClass("all-selected").removeClass("all-noselected");
+                    $(".button").addClass("selected").removeClass("no-selected");
+                    var selectedNum = $(".selected").length;
+               		var selectedBtnNum = $(".select-btn").length;
+               		$(".change").text(selectedNum);
+                }else {
+                    $(".all-btn").addClass("all-noselected").removeClass("all-selected");
+                    $(".button").addClass("no-selected").removeClass("selected");
+                    $(".change").text(0);
+                }
+            });
+
+            //单个选中
+            $(".button").click(function(){
+                $(this).toggleClass("selected");
+                var selectedNum = $(".button.selected").length;
+                var selectedBtnNum = $(".button").length;
+                $(".change").text(selectedNum);
+                if(selectedNum == selectedBtnNum) {
+                    $(".all-btn").addClass("all-selected").removeClass("all-noselected");
+                }else {
+                    $(".all-btn").addClass("all-noselected").removeClass("all-selected");
+                }
+            })
+        })
+	</script>
+
+</body>
+</html>
